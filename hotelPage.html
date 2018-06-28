@@ -1,0 +1,150 @@
+<html>
+	
+	<head>
+	
+		<title>Get a Room</title>
+
+		<link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+		
+		<style type="text/css">
+			
+			body{
+				background-color:#5CDB95;
+				font-family: 'Satisfy', cursive;
+				color:#05386B;
+				font-size:30px;
+				zoom:110%;
+			}
+
+			.logo{
+
+				width:140px;
+				height:175px;
+				position:absolute;
+				left:2%;
+				top:0%;
+
+			}
+
+			.welcomeText{
+
+				position:absolute;
+				right:1%;
+				top:5.5%;
+
+			}
+
+			.introText{
+
+				position:absolute;
+				top:30%;
+				left:27%;
+
+			}
+
+			.title{
+				
+				position:absolute;
+				left:13%;
+				top:-2%;
+			
+			}
+
+			.subtitle{
+
+				position:absolute;
+				left:14%;
+				top:10%;
+
+			}
+
+            .hName{
+
+            	position:absolute;
+            	left:35%;
+            	top:40%;
+            	font-size:22px;
+            }
+
+
+		</style>
+	
+	</head>
+	
+	<body>
+
+		<div>
+			
+			<img class ="logo" src="logo.png">
+
+		</div>
+
+		<div>
+			
+			<h1 class="title">Get a Room</h1>
+			<h4 class="subtitle">Book your stay, today </h4>
+
+		</div>
+
+		<div class="welcomeText">
+			
+			 <p id="user"></p>
+
+		</div>
+
+		<div class="introText">
+
+			<p id="details"></p>
+
+		</div>
+
+		<div class="hName">
+			
+			<p id="0"></p>
+			<p id="1"></p>
+			<p id="2"></p>
+
+
+		</div>
+
+        <script type="text/javascript">
+           
+    		document.getElementById('user').innerHTML = "Welcome, "+localStorage.getItem('username');
+
+    		var city = localStorage.getItem('city');
+    		var hotelStar = localStorage.getItem('hotelStar');
+    		var userStar = localStorage.getItem('userStar');
+
+    		var hotels = '[{"hotelName": ["The Oberoi","The Residency","The Grand Palace","Taj Palace","Holiday Inn","Leela Residency","Star Hotel"], "hotelStar": ["seven","five","seven","five","five","four","three"], "userStar": [5,5,5,4,3,3], "city": ["bangalore", "goa", "mumbai", "agra", "chennai", "pondicherry", "shimla"]}]';
+
+    		var obj = JSON.parse(hotels);
+    		var len = obj[0].hotelName.length;
+
+    		var count = 0;
+
+    		for(var i=0; i<len; i++){
+
+    			if(city == obj[0].city[i] && hotelStar == obj[0].hotelStar[i] && userStar == obj[0].userStar[i]){
+
+    				document.getElementById(count).innerHTML = obj[0].hotelName[i];
+    				count++;
+
+    			}
+
+    		}
+
+    		if(count == 0){
+
+    			document.getElementById(0).innerHTML = "Looks like we don't have a hotel for you afterall";
+
+
+    		}
+
+    		document.getElementById('details').innerHTML = "Searching for - "+city+", "+hotelStar+" star and rated "+userStar+" by our users";
+
+        </script>
+
+	</body>
+
+</html>

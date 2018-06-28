@@ -1,0 +1,138 @@
+<html>
+	
+	<head>
+	
+		<title>Get a Room</title>
+
+		<link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+		
+		<style type="text/css">
+			
+			body{
+				background-color:#5CDB95;
+				font-family: 'Satisfy', cursive;
+				color:#05386B;
+				font-size:30px;
+			}
+
+			.logo{
+
+				width:140px;
+				height:175px;
+				position:absolute;
+				left:2%;
+				top:0%;
+
+			}
+
+			.title{
+				
+				position:absolute;
+				left:13%;
+				top:-2%;
+			
+			}
+
+			.subtitle{
+
+				position:absolute;
+				left:14%;
+				top:10%;
+
+			}
+
+            #slides {
+                position: absolute;
+                top:25%;
+                left:10%;
+                height: 300px;
+                padding: 0px;
+                margin: 0px;
+                list-style-type: none;
+            }
+
+            .slide {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 1;
+
+                -webkit-transition: opacity 1s;
+                -moz-transition: opacity 1s;
+                -o-transition: opacity 1s;
+                transition: opacity 1s;
+            }
+
+            .showing {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            .carousel{
+
+                width:800px;
+                height:400px;
+
+            }
+
+            .carouselText{
+
+                width:130px;
+                position:absolute;
+                top:122%;
+                left:350px;
+                color:#05386B;
+
+            }
+
+
+		</style>
+	
+	</head>
+	
+	<body>
+
+		<div>
+			
+			<img class ="logo" src="logo.png">
+
+		</div>
+
+		<div>
+			
+			<h1 class="title">Get a Room</h1>
+			<h4 class="subtitle">Book your stay, today </h4>
+
+
+		</div>
+
+		<div id="slides">
+    
+            <div class="slide showing"><img class="carousel" src="hotel1.jpg"><h2 class="carouselText">Hotel 1</h2></div>
+            <div class="slide"><img class="carousel" src="hotel2.jpg"><h2 class="carouselText">Hotel 2</h2></div>
+            <div class="slide"><img class="carousel" src="hotel3.jpg"><h2 class="carouselText">Hotel 3</h2></div>
+    
+        </div>
+    
+        <script type="text/javascript">
+            
+            var slides = document.querySelectorAll('#slides .slide');
+            var currentSlide = 0;
+            var slideInterval = setInterval(nextSlide,3000);
+
+            function nextSlide() {
+                slides[currentSlide].className = 'slide';
+                currentSlide = (currentSlide+1)%slides.length;
+                slides[currentSlide].className = 'slide showing';
+            }
+
+
+        </script>
+
+	</body>
+
+</html>

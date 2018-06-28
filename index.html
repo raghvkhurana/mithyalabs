@@ -1,0 +1,443 @@
+<html>
+	
+	<head>
+	
+		<title>Get a Room</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+		
+		<style type="text/css">
+			
+			body{
+				background-color:#5CDB95;
+				font-family: 'Satisfy', cursive;
+				color:#05386B;
+				font-size:30px;
+				zoom:110%;
+			}
+
+			.logo{
+
+				width:140px;
+				height:175px;
+				position:absolute;
+				left:2%;
+				top:0%;
+
+			}
+
+			.title{
+				
+				position:absolute;
+				left:13%;
+				top:-2%;
+			
+			}
+
+			.subtitle{
+
+				position:absolute;
+				left:14%;
+				top:10%;
+
+			}
+
+			.loginForm{
+
+				position:absolute;
+				right:3%;
+				top:10%;
+				font:;
+
+			}
+
+			.loginField{
+
+				padding-left:20px;
+				height:30px;
+				border-radius:10px;
+				border-style:none;
+
+			}
+
+			.loginButton{
+
+				height:30px;
+				width:70px;
+				border-radius:10px;
+				border-style:none;
+				background-color:white;
+
+			}
+
+			.loginButton:hover{
+
+				background-color:#EDF5E1;
+
+			}
+
+			.carouselTab{
+
+				position:absolute;
+				top:30%;
+				width: 1365px;
+				height:400px;
+				background-color: #8EE4AF;
+
+
+			}
+
+            #slides {
+                position: relative;
+                top:0%;
+                left:0%;
+                height: 300px;
+                width:300px;
+                padding: 0px;
+                margin: 0px;
+                list-style-type: none;
+            }
+
+            .slide {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 90%;
+                height: 100%;
+                opacity: 0;
+                z-index: 1;
+
+                -webkit-transition: opacity 1s;
+                -moz-transition: opacity 1s;
+                -o-transition: opacity 1s;
+                transition: opacity 1s;
+            }
+
+            .showing {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            .carousel{
+
+                width:800px;
+                height:400px;
+
+            }
+
+            .carouselText{
+
+                width:130px;
+                position:absolute;
+                top:122%;
+                left:350px;
+                color:#05386B;
+
+            }
+
+            .inputCity:hover{
+
+            	background-color:#EDF5E1;
+
+            }
+
+            .inputCity{
+
+            	position:absolute;
+            	top:7%;
+            	left:65%;
+            	font-size:18px;
+            	background-color: white;
+            	width:120px;
+            	height:50px;
+            	border-radius:10%;
+            	padding-left:9px;
+            	font-family: 'Satisfy', cursive;
+
+            }
+
+            .smallOpt{
+
+            	font-size:13px;
+
+            }
+
+            .rating:hover{
+
+            	background-color:#EDF5E1;
+
+            }
+
+            .rating{
+
+            	position:absolute;
+            	top:27%;
+            	left:65%;
+            	font-size:18px;
+            	background-color: white;
+            	width:120px;
+            	height:50px;
+            	border-radius:10%;
+            	padding-left:9px;
+            	font-family: 'Satisfy', cursive;
+
+            }
+
+            .sliderContainer{
+
+            	position:absolute;
+            	left:62%;
+            	top:41%;
+            	font-size:16px;
+            	color:black;
+
+            }
+
+            .sliderText{
+
+            	position:relative;
+            	left:35px;
+
+            }
+
+            .slider {
+ 			    -webkit-appearance: none;  /* Override default CSS styles */
+			    appearance: none;
+			    width: 200px; /* Full-width */
+			    height: 25px; /* Specified height */
+			    background:white; /* Grey background */
+			    outline: none; /* Remove outline */
+			    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+			    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+			    transition: opacity .2s;
+			    margin-top:-10px;
+			}
+
+			.slider:hover {
+			    opacity: 1; /* Fully shown on mouse-over */
+			}
+
+			.slider::-webkit-slider-thumb {
+			    -webkit-appearance: none; /* Override default look */
+			    appearance: none;
+			    width: 10px; /* Set a specific slider handle width */
+			    height: 25px; /* Slider handle height */
+			    background:#379683; /* Green background */
+			    cursor: pointer; /* Cursor on hover */
+			}
+
+			.slider::-moz-range-thumb {
+			    width: 25px; /* Set a specific slider handle width */
+			    height: 25px; /* Slider handle height */
+			    background: #4CAF50; /* Green background */
+			    cursor: pointer; /* Cursor on hover */
+			}
+
+			#submit{
+
+				position:absolute;
+				left:65.5%;
+				top:75%;
+				width:100px;
+				height:30px;
+				background-color:white;
+				border:0px;
+				border-radius:10px;
+				color:black;
+
+			}
+
+			#submit:hover{
+
+				background-color: #EDF5E1;
+
+			}
+
+			.socialMedia{
+
+				position:absolute;
+				bottom:-10%;
+				right:2%;
+
+			}
+
+			.socialMedialogo{
+
+				width:30px;
+				height:30px;
+
+			}
+
+			.signature{
+
+				position:absolute;
+				bottom:-11%;
+				right:45%;
+				font-size:15px;
+
+			}
+
+
+
+		</style>
+	
+	</head>
+	
+	<body>
+
+
+		<div>
+			
+			<img class ="logo" src="logo.png">
+
+		</div>
+
+		<div>
+			
+			<h1 class="title">Get a Room</h1>
+			<h4 class="subtitle">Book your stay, today </h4>
+
+
+		</div>
+
+		<div>
+			
+			 <form action="" class="loginForm">
+			 	
+			 	<input class="loginField" type="text" id="username" name="username" placeholder="Username">
+			 	<input class="loginField" type="password" id="password" name="password" placeholder="Password">	
+			 	<input class="loginButton" type="button" value="Login" onclick="login()">
+
+
+			 </form>
+
+
+		</div>
+
+		<div class="carouselTab">
+
+			<div id="slides">
+	    
+	            <div class="slide showing"><img class="carousel" src="hotel1.jpg"><h2 class="carouselText">Hotel 1</h2></div>
+	            <div class="slide"><img class="carousel" src="hotel2.jpg"><h2 class="carouselText">Hotel 2</h2></div>
+	            <div class="slide"><img class="carousel" src="hotel3.jpg"><h2 class="carouselText">Hotel 3</h2></div>
+	    
+	        </div>
+	    
+	        <script type="text/javascript">
+	            
+	            var slides = document.querySelectorAll('#slides .slide');
+	            var currentSlide = 0;
+	            var slideInterval = setInterval(nextSlide,3000);
+
+	            function nextSlide() {
+	                slides[currentSlide].className = 'slide';
+	                currentSlide = (currentSlide+1)%slides.length;
+	                slides[currentSlide].className = 'slide showing';
+	            }
+
+
+	            function login(){
+
+			    	var users, flag;
+
+			    	users = '[{ "username":["raghav","aachman","manan","sarjak"],"password":["rag1","aac1","man1","sar1"]	}]'
+
+			    	var obj = JSON.parse(users);
+			    	var len = obj[0].username.length;
+
+			    	var name = document.getElementById('username').value;
+			    	var pass = document.getElementById('password').value;
+
+			    	for(var i=0; i<len; i++){
+
+			    		if(name==obj[0].username[i] && pass==obj[0].password[i]){
+			    			flag = 1;
+			    			break;
+			    		}
+			    		else
+			    			flag = 0;
+
+			    	}
+
+			    	if(flag == 1){
+			    		
+			    		localStorage.setItem("username",name);
+			    		window.location = "userpage.html";
+			    	
+			    	}
+
+			    	else
+
+			    		alert('Username/Password combination incorrect');
+			    		
+
+		    	}
+
+
+
+	        </script>
+
+	        <form action="">
+	        	
+	        	<select name="city" size="1" class="inputCity">
+
+	        		<option class='smallOpt' value="agra">Agra</option>
+	        		<option class='smallOpt' selected='selected' value="bangalore">Bangalore</option>
+	        		<option class='smallOpt' value="chennai">Chennai</option>
+	        		<option class='smallOpt' value="delhi">Delhi/NCR</option>
+	        		<option class='smallOpt' value="goa">Goa</option>
+	        		<option class='smallOpt' value="hyderabad">Hyderabad</option>
+	        		<option class='smallOpt' value="jaipur">Jaipur</option>
+	        		<option class='smallOpt' value="kolkata">Kolkata</option>
+	        		<option class='smallOpt' value="lucknow">Lucknow</option>
+	        		<option class='smallOpt' value="mumbai">Mumbai</option>
+	        		<option class='smallOpt' value="pondicherry">Pondicherry</option>
+	        		<option class='smallOpt' value="shimla">Shimla</option>
+
+	        	</select>
+	        	
+	        	<select name="rating" size="1" class="rating">
+
+	        		<option class='smallOpt' value="seven">7 star</option>
+	        		<option class='smallOpt' selected='selected' value="five">5 star</option>
+	        		<option class='smallOpt' value="four">4 star</option>
+	        		<option class='smallOpt' value="three">3 star</option>
+
+	        	</select>
+
+
+	        	<div class="sliderContainer">
+		        	
+		        	<p class="sliderText">1- -User Ratings - -5</p>
+					<input type="range" name="userRating" min="1" max="5" class="slider">
+
+				</div>
+
+				<input type="button" id="submit" value='Search' onclick="alert('Uhoh, try again after you login')">
+
+	        </form>
+
+	    </div>
+
+	    <div class="socialMedia">
+	    	
+	    	<img src="facebook.png" class="socialMedialogo">
+	    	<img src="twitter.png" class="socialMedialogo">
+	    	<img src="insta.png" class="socialMedialogo">
+	    	<img src="pinterest.png" class="socialMedialogo">
+
+
+	    </div>
+
+	    <div class="signature">
+	    	
+	    	<p> © 2018 Raghav Khurana </p>
+
+
+	    </div>
+
+	</body>
+
+</html>
